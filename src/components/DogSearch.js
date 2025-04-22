@@ -45,6 +45,31 @@ function DogSearch({ onLogout }) {
     searchDogs();
   }, []);
 
+  // Load favorites from localStorage on component mount
+  useEffect(() => {
+    const loadFavorites = () => {
+      try {
+        const savedFavorites = localStorage.getItem("FAVORITES_STORAGE_KEY");
+        if (savedFavorites) {
+          setFavorites(JSON.parse(savedFavorites));
+        }
+      } catch (error) {
+        console.error('Error loading favorites from localStorage:', error);
+      }
+    };
+
+    loadFavorites();
+  }, []);
+
+  // Save favorites to localStorage whenever they change
+  useEffect(() => {
+    try {
+      localStorage.setItem("FAVORITES_STORAGE_KEY", JSON.stringify(favorites));
+    } catch (error) {
+      console.error('Error saving favorites to localStorage:', error);
+    }
+  }, [favorites]);
+
   // Fetch dogs based on search params
   const searchDogs = async (params = null) => {
     setLoading(true);
