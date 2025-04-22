@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DogCard({ dog }) {
+function DogCard({ dog, isFavorite, onToggleFavorite }) {
   return (
     <div className="rounded-lg shadow-md overflow-hidden">
       <div className="dog-image">
@@ -17,10 +17,17 @@ function DogCard({ dog }) {
         <div className="flex justify-between items-start mb-3">
           <div>
             <h3>{dog.name}</h3>
-            <p>{dog.breed}</p>
+            <p className="mb-2">{dog.breed}</p>
           </div>
+          <button
+            className={`cursor-pointer transition-colors text-xl hover:text-red-600 ${isFavorite ? 'text-red-600' : 'text-slate-400'}`}
+            onClick={onToggleFavorite}
+            aria-label={isFavorite ? `Remove ${dog.name} from favorites` : `Add ${dog.name} to favorites`}
+          >
+            ♥
+          </button>
         </div>
-        <div className="grid grid-cols-1 gap-3 text-slate-700 text-sm">
+        <div className="grid grid-cols-1 gap-2 text-slate-700 text-sm">
           <div>
             <span>Age:</span> {dog.age} {dog.age === 1 ? 'year' : 'years'}
           </div>
