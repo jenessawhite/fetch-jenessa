@@ -39,7 +39,7 @@ function FilterPanel({
                 {breed}
                 <button
                   onClick={() => onBreedSelect(breed)}
-                  className="bg-none ml-2 text-lg text-sky-900 font-bold hover:text-red-600 transition-colors"
+                  className="bg-none text-sky-900 font-bold hover:text-red-600 transition-colors px-2"
                 >
                   ×
                 </button>

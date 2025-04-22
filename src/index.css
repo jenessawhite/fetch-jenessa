@@ -58,7 +58,7 @@ p {
 }
 
 .btn-secondary {
-  background-color: #e5e7eb;
+  background-color: #e7e5e4;
   color: #1f2937;
   border: none;
   padding: 0.5rem 1rem;
@@ -69,7 +69,7 @@ p {
 }
 
 .btn-secondary:hover {
-  background-color: #d1d5db;
+  background-color: #d6d3d1;
 }
 
 .btn-secondary:disabled {
