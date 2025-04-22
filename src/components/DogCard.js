@@ -17,7 +17,7 @@ function DogCard({ dog, isFavorite, onToggleFavorite }) {
         <div className="flex justify-between items-start mb-3">
           <div>
             <h3>{dog.name}</h3>
-            <p className="mb-2">{dog.breed}</p>
+            <p className="mb-0">{dog.breed}</p>
           </div>
           <button
             className={`cursor-pointer transition-colors text-xl hover:text-red-600 ${isFavorite ? 'text-red-600' : 'text-slate-400'}`}

@@ -30,7 +30,6 @@ function App() {
     checkAuth();
   }, []);
 
-  // Handle login
   const handleLogin = async (name, email) => {
     try {
       const response = await fetch(`${API_BASE_URL}/auth/login`, {
@@ -54,7 +53,6 @@ function App() {
     }
   };
 
-  // Handle logout
   const handleLogout = async () => {
     try {
       await fetch(`${API_BASE_URL}/auth/logout`, {
@@ -73,7 +71,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-stone-50">
       {isAuthenticated ? (
         <DogSearch onLogout={handleLogout} />
       ) : (

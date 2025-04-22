@@ -10,15 +10,15 @@ function FilterPanel({
   onResetFilters
 }) {
   return (
-    <div className="shadow p-6 rounded-lg mb-8">
-      <h2 className="mb-6">Filter Dogs</h2>
+    <div className="shadow p-6 rounded-lg mb-2 sm:mb-6">
+      <h2 className="mb-2">Filter Dogs</h2>
 
-      <div className="mb-6">
+      <div className="mb-3">
         <label className="block mb-2 font-medium">Breed</label>
         <select
           onChange={(e) => onBreedSelect(e.target.value)}
           value=""
-          className="w-full p-3 border border-slate-600 rounded"
+          className="p-2 border border-slate-600 rounded"
         >
           <option value="" disabled>Select breeds</option>
           {breeds.map((breed, index) => (
@@ -49,7 +49,7 @@ function FilterPanel({
         )}
       </div>
 
-      <div className="mb-6">
+      <div className="mb-3">
         <div className="flex gap-2 items-center">
           <label className="block font-medium">Sort Breeds: </label>
           <button
